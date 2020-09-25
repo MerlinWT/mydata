@@ -64,8 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
             xhr.open('GET', 'http://mydata.unixadm.info/api/version.py');
             xhr.send();
 
-            document.getElementById('header-version').innerText =
-                JSON.parse(xhr.responseText).current
+            xhr.onload = () =>
+                document.getElementById('header-version').innerText =
+                    JSON.parse(xhr.response).current
+
         }
 
         function el(tag, properties = {}, attributes = {}) {
