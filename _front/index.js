@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     (function (document) {
         const forms = {
-            spending: [
-                ['input', {}, {placeholder: 'магазин'}],
-                ['input', {}, {placeholder: 'сумма'}],
-            ],
+            spending: {
+                action: 'api/spending/create.py',
+                list: [
+                    ['input', {}, {placeholder: 'магазин', name: 'shop'}],
+                    ['input', {}, {placeholder: 'сумма', name: 'sum'}],
+                ]
+            },
         };
 
         let categories = [
@@ -36,24 +39,36 @@ document.addEventListener("DOMContentLoaded", function () {
             {
                 caption: 'Спорт', groups: [
                     {
-                        id: 'sport_bicycle', caption: 'Велосипед', fields: [
-                            ['input', {}, {placeholder: 'время'}],
-                            ['input', {}, {placeholder: 'дистанция'}],
-                        ]
+                        id: 'sport_bicycle', caption: 'Велосипед', fields: {
+                            list: [
+                                ['input', {}, {placeholder: 'время', name: 'duration'}],
+                                ['input', {}, {placeholder: 'дистанция', name: 'distance'}],
+                            ],
+                            action: 'api/sport/bicycle/create.py'
+                        }
                     },
                     {
-                        id: 'sport_exercises', caption: 'Упражнения', fields: [
-                            ['input', {}, {placeholder: 'отжимания'}],
-                            ['input', {}, {placeholder: 'приседания'}],
-                            ['input', {}, {placeholder: 'пресс'}],
-                            ['input', {}, {placeholder: 'подтягивания'}],
-                        ]
+                        id: 'sport_exercises', caption: 'Упражнения', fields: {
+                            list: [
+                                ['input', {}, {placeholder: 'отжимания', name: 'push-ups'}],
+                                ['input', {}, {placeholder: 'приседания', name: 'squats'}],
+                                ['input', {}, {placeholder: 'пресс', name: 'abdominal'}],
+                                ['input', {}, {placeholder: 'подтягивания', name: 'pull-ups'}],
+                            ],
+                            action: 'api/sport/exercises/create.py'
+                        }
                     },
                     {
-                        id: 'sport_volleyball', caption: 'Волейбол', fields: []
+                        id: 'sport_volleyball', caption: 'Волейбол', fields: {
+                            list: [],
+                            action: 'api/sport/create.py'
+                        }
                     },
                     {
-                        id: 'sport_pin_pong', caption: 'Пин-понг', fields: []
+                        id: 'sport_pin_pong', caption: 'Пин-понг', fields: {
+                            list: [],
+                            action: 'api/sport/create.py'
+                        }
                     },
                 ]
             },
@@ -154,11 +169,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     const headerEl = div({className: 'screen-header'});
                     const spanEl = span({innerText: `${group.caption} (${category.caption})`});
                     const aEl = a({innerText: 'наверх'}, {href: '#header'});
-                    const formEl = form();
-                    const dateEl = input({}, {placeholder: 'дата'});
+                    const formEl = form({}, {action: group.fields.action});
+                    formEl.onsubmit = function () {
+
+                    };
+                    const dateEl = input({}, {placeholder: 'дата', name: 'date'});
 
                     formEl.append(dateEl);
-                    group.fields.forEach(
+                    group.fields.list.forEach(
                         field => formEl.append(el(...field))
                     );
                     const submitEl = btn({innerText: 'Отправить'});
