@@ -14,16 +14,19 @@ body>div {
 
 .main-header-wrapper {
     display: flex;
-    align-items: center;
-    height: 70px;
+    height: 50px;
+    margin: 10px 0;
+    align-items: end;
 }
 
 .categories-list-wrapper {
     height: calc(100vh - 70px);
 }
 
-h1 {
+.heater-title {
     margin-left: 10px;
+    font-size: 40px;
+    line-height: 50px;
 }
 
 .logo {
