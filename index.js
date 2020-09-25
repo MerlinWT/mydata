@@ -59,6 +59,15 @@ document.addEventListener("DOMContentLoaded", function () {
             },
         ];
 
+        function loadVersion() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://mydata.unixadm.info/api/version.py');
+            xhr.send();
+
+            document.getElementById('header-version').innerText =
+                JSON.parse(xhr.responseText).version
+        }
+
         function el(tag, properties = {}, attributes = {}) {
             const el = document.createElement(tag);
             Object.assign(el, properties);
@@ -162,7 +171,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     categoriesEl.append(screenEl)
                 }
             )
-        )
+        );
+
+        loadVersion();
 
     })(document);
 });
