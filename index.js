@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
             xhr.send();
 
             document.getElementById('header-version').innerText =
-                JSON.parse(xhr.responseText).version
+                JSON.parse(xhr.responseText).current
         }
 
         function el(tag, properties = {}, attributes = {}) {
