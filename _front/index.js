@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function loadVersion() {
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', 'http://mydata.unixadm.info/api/version.py');
+            xhr.open('GET', 'http://mydata.ru/api/version.py');
             xhr.send();
 
             xhr.onload = () =>

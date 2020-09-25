@@ -1,0 +1,13 @@
+version: '2.1'
+services:
+  nginx:
+    build: ./docker/nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./docker/nginx/mydata.conf:/etc/nginx/conf.d/mydata.conf
+      - ./_front:/usr/share/nginx/mydata
+  python:
+    build: ./docker/python
+    volumes:
+      - ./_back:/usr/src/app/cgi-bin
