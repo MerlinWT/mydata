@@ -2,11 +2,11 @@
 import mariadb
 import json
 
-version = '-2'
-# Connect to MariaDB Platform
+version = "-2"
+
 try:
     conn = mariadb.connect(
-        user="root",
+        user="mydata",
         password="passw0rd",
         host="db",
         port=3306,
