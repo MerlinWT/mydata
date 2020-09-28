@@ -11,3 +11,9 @@ services:
     build: ./docker/python
     volumes:
       - ./_back:/usr/src/app/cgi-bin
+  db:
+    build: ./docker/mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: passw0rd
+    volumes:
+      - ./docker/mariadb/init.sql:/tmp/init.sql
