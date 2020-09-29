@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         id: 'spending_appliances', caption: 'Техника', fields: forms.spending
                     },
                     {
-                        id: 'spending_communal', caption: 'Комунальные услуги', fields: forms.spending
+                        id: 'spending_communal', caption: 'Коммунальные услуги', fields: forms.spending
                     },
                     {
                         id: 'spending_communication', caption: 'Связь', fields: forms.spending
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         }
                     },
                     {
-                        id: 'sport_pin_pong', caption: 'Пин-понг', fields: {
+                        id: 'sport_pin_pong', caption: 'Пинг-понг', fields: {
                             list: [],
                             action: 'api/sport/create.py'
                         }
