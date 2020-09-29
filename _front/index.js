@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
     (function (document) {
         const forms = {
             spending: {
-                action: 'api/spending/create.py',
+                action: 'api/create.py',
+                model: 'spending',
                 list: [
                     ['input', {}, {placeholder: 'магазин', name: 'shop'}],
                     ['input', {}, {placeholder: 'сумма', name: 'sum'}],
@@ -40,34 +41,38 @@ document.addEventListener("DOMContentLoaded", function () {
                 caption: 'Спорт', groups: [
                     {
                         id: 'sport_bicycle', caption: 'Велосипед', fields: {
+                            action: 'api/create.py',
+                            model: 'bicycle',
                             list: [
                                 ['input', {}, {placeholder: 'время', name: 'duration'}],
                                 ['input', {}, {placeholder: 'дистанция', name: 'distance'}],
-                            ],
-                            action: 'api/sport/bicycle/create.py'
+                            ]
                         }
                     },
                     {
                         id: 'sport_exercises', caption: 'Упражнения', fields: {
+                            action: 'api/create.py',
+                            model: 'exercises',
                             list: [
                                 ['input', {}, {placeholder: 'отжимания', name: 'push-ups'}],
                                 ['input', {}, {placeholder: 'приседания', name: 'squats'}],
                                 ['input', {}, {placeholder: 'пресс', name: 'abdominal'}],
                                 ['input', {}, {placeholder: 'подтягивания', name: 'pull-ups'}],
-                            ],
-                            action: 'api/sport/exercises/create.py'
+                            ]
                         }
                     },
                     {
                         id: 'sport_volleyball', caption: 'Волейбол', fields: {
-                            list: [],
-                            action: 'api/sport/create.py'
+                            action: 'api/create.py',
+                            model: 'dated',
+                            list: []
                         }
                     },
                     {
                         id: 'sport_pin_pong', caption: 'Пинг-понг', fields: {
-                            list: [],
-                            action: 'api/sport/create.py'
+                            action: 'api/create.py',
+                            model: 'dated',
+                            list: []
                         }
                     },
                 ]
@@ -170,12 +175,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     const spanEl = span({innerText: `${group.caption} (${category.caption})`});
                     const aEl = a({innerText: 'наверх'}, {href: '#header'});
                     const formEl = form({}, {action: group.fields.action});
-                    formEl.onsubmit = function () {
 
-                    };
+                    const modelEl = input({}, {name: 'model', hidden: 'true', value: group.fields.model});
+                    formEl.append(modelEl);
                     const dateEl = input({}, {placeholder: 'дата', name: 'date'});
-
                     formEl.append(dateEl);
+
                     group.fields.list.forEach(
                         field => formEl.append(el(...field))
                     );
