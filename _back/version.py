@@ -8,7 +8,7 @@ from response.json import main as json_response
 connection, error = get_connection()
 if not error:
     version = get_version(
-        connection
+        connection.cursor()
     )
 
     json_response({"current": version})

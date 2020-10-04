@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from db.models.dated import Dated
+from db.models.base.dated import Dated
 
 
 class Spending(Dated):

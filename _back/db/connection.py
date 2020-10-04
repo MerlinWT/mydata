@@ -12,6 +12,6 @@ def get():
 
         )
 
-        return conn.cursor(), None
+        return conn, None
     except mariadb.Error as e:
         return False, e
