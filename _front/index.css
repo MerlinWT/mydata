@@ -1,87 +1,77 @@
+html {
+    height: 100%
+}
+
 body {
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    color: white;
-    overflow: hidden;
     margin: 0;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+    background: #2b2b2b;
+    color: #bababa;
+    font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
+    cursor: default;
 }
 
-body>div {
-    width: 100%;
-    max-width: 500px;
-}
-
-.main-header-wrapper {
+#header {
     display: flex;
-    height: 50px;
-    margin: 10px 0;
-    align-items: end;
+    align-items: center;
+    padding: 0 10px;
 }
 
-.categories-list-wrapper {
-    height: calc(100vh - 70px);
+#logo {
+    width: 80px;
+    height: 80px;
+    background: #5084b8;
 }
 
-.heater-title {
+#title {
     margin-left: 10px;
-    font-size: 40px;
+    font-size: 50px;
     line-height: 50px;
 }
 
-.logo {
-    background: white;
-    width: 50px;
+#version {
     height: 50px;
 }
 
-.header {
-    padding: 5px;
-    border-bottom: 1px solid white;
+#outlet {
+    padding: 0 10px;
+}
+
+#error {
+    font-size: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.categories {
+    font-size: 30px;
+}
+
+.category {
+    margin-bottom: 10px;
+}
+
+.category > span {
+    border-bottom: 1px solid #bababa;
+    display: block;
     margin-bottom: 10px;
 }
 
 .groups {
+    font-size: 20px;
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-row-gap: 5px;
-    grid-column-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 }
 
 .group {
-    display: block;
-    background: white;
-    color: black;
-    height: 50px;
-    padding: 5px;
-    cursor: pointer;
-}
-
-.screen {
-    height: 100vh;
-}
-
-.screen-header {
-    display: flex;
-    justify-content: space-between;
-}
-
-input {
-    font-size: 40px;
-    width: 100%;
-    padding: 0;
-    border: none;
-    border-bottom: 1px solid white;
-    background: black;
-    color: white;
-    margin-top: 10px;
-}
-
-button {
-    margin-top: 10px;
-    width: 100%;
-    border: none;
-    background-color: white;
-    color: black;
-    font-size: 40px;
+    color: #2b2b2b;
+    background-color: #bababa;
+    padding: 10px;
+    overflow: hidden;
 }

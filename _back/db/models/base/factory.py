@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+from db.models.version import Version
+
+from db.models.category import Category
+from db.models.group import Group
+
 from db.models.spending_products import SpendingProducts
 from db.models.spending_chemistry import SpendingChemistry
 from db.models.spending_appliances import SpendingAppliances
@@ -14,8 +19,13 @@ from db.models.sport_volleyball import SportVolleyball
 from db.models.sport_ping_pong import SportPingPong
 
 
-def create(name, fields):
+def create(name, fields=None):
     _map = {
+        'version': Version,
+
+        'category': Category,
+        'group': Group,
+
         'spending_products': SpendingProducts,
         'spending_chemistry': SpendingChemistry,
         'spending_appliances': SpendingAppliances,
@@ -33,6 +43,7 @@ def create(name, fields):
     model = None
     if name in _map:
         model = _map[name]()
-        model.deserialize(fields)
+        if fields:
+            model.deserialize(fields)
 
     return model

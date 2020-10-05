@@ -9,7 +9,6 @@ def get():
             host="db",
             port=3306,
             database="mydata"
-
         )
 
         return conn, None
