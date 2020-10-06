@@ -18,5 +18,5 @@ function api(method, url, callback) {
 export function get(model, params, callback) {
     params['model'] = model;
 
-    api('GET', `get.py?${serialise(params)}`, callback)
+    api('GET', `get?${serialise(params)}`, callback)
 }

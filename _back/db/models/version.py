@@ -7,6 +7,6 @@ class Version(Model):
 
     value = None
 
-    def deserialize(self, fields):
-        self.value = str(fields.getfirst('value')),
+    # def deserialize(self, fields):
+    #     self.value = str(fields.getfirst('value')),
 

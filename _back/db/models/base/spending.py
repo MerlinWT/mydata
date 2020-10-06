@@ -6,8 +6,8 @@ class Spending(Dated):
     shop = None
     sum = None
 
-    def deserialize(self, fields):
-        super().deserialize(fields)
-
-        self.shop = str(fields.getfirst('shop'))
-        self.sum = float(fields.getfirst('sum'))
+    # def deserialize(self, values):
+    #     super().deserialize(values)
+    #
+    #     self.shop = str(values["shop"])
+    #     self.sum = float(values["sum"])

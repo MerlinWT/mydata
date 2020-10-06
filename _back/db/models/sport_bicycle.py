@@ -8,8 +8,8 @@ class SportBicycle(Dated):
     duration = None
     distance = None
 
-    def deserialize(self, fields):
-        super().deserialize(fields)
-
-        self.duration = float(fields.getfirst('duration'))
-        self.distance = float(fields.getfirst('distance'))
+    # def deserialize(self, fields):
+    #     super().deserialize(fields)
+    #
+    #     self.duration = float(fields.getfirst('duration'))
+    #     self.distance = float(fields.getfirst('distance'))

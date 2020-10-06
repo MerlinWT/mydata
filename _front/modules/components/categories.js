@@ -17,7 +17,7 @@ function category(id, title) {
             pkv: id
         },
         response => categoryEl.append(
-            groups(response)
+            groups(response.rows)
         )
     );
 

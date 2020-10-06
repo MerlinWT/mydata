@@ -9,7 +9,7 @@ class Group(Model):
     title = None
     model = None
 
-    def deserialize(self, fields):
-        self.title = str(fields.getfirst('title')),
-        self.model = str(fields.getfirst('model')),
+    # def deserialize(self, fields):
+    #     self.title = str(fields.getfirst('title')),
+    #     self.model = str(fields.getfirst('model')),
 

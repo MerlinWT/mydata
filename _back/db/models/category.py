@@ -9,7 +9,7 @@ class Category(Model):
     title = None
     prefix = None
 
-    def deserialize(self, fields):
-        self.title = str(fields.getfirst('title')),
-        self.title = str(fields.getfirst('prefix')),
+    # def deserialize(self, fields):
+    #     self.title = str(fields.getfirst('title')),
+    #     self.title = str(fields.getfirst('prefix')),
 

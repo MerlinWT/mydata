@@ -7,7 +7,7 @@ export function get(versionEl) {
         'version',
         {},
         response => versionEl.append(
-            span({innerText: response[0].value})
+            span({innerText: response.rows[0].value})
         )
     );
 

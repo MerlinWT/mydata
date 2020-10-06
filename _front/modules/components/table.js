@@ -18,10 +18,10 @@ function row(data) {
 export function table(model) {
     const tableEl = div({className: "table"});
 
-    getModel(model, {}, items => {
-        items.forEach(
-            item => tableEl.append(
-                row(item)
+    getModel(model, {}, ({rows}) => {
+        rows.forEach(
+            rowData => tableEl.append(
+                row(rowData)
             )
         );
     });

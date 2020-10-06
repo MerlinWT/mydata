@@ -6,7 +6,7 @@ export function init(outletEl) {
         'category',
         {},
         response => outletEl.append(
-            categories(response)
+            categories(response.rows)
         )
     );
 }
