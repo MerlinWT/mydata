@@ -1,9 +1,9 @@
-import {get as getVersion} from "./modules/version.js"
-import {getState} from "./modules/state.js";
+import {get as getVersion} from "./components/version.js"
+import {getState} from "./state.js";
 
-import {init as _404} from "./modules/states/_404.js";
-import {init as index} from "./modules/states/index.js";
-import {init as group} from "./modules/states/group.js";
+import {init as _404} from "./states/_404.js";
+import {init as index} from "./states/index.js";
+import {init as group} from "./states/group.js";
 
 document.addEventListener("DOMContentLoaded", function () {
     (function (document) {

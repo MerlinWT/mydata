@@ -1,6 +1,6 @@
-import {div, span} from "../dom.js";
-import {get as getModel} from "../api.js";
-import {get as form} from "../form.js";
+import {appends, span} from "../dom.js";
+import {get as form} from "../components/form.js";
+import {table} from "../components/table.js";
 
 const spending = [
     ['input', {}, {placeholder: 'магазин', name: 'shop'}],
@@ -33,33 +33,10 @@ const fields = {
 export function init(outletEl, data) {
     const model = data[0];
 
-    outletEl.append(
-        span({innerText: model, className: 'group-name'})
-    );
+    appends(outletEl, [
+        span({innerText: model, className: 'group-name'}),
+        form(model, fields[model]),
+        table(model)
+    ]);
 
-    outletEl.append(
-        form(model, fields[model])
-    );
-
-    const itemsEl = div({className: "items"});
-    getModel(model, {}, response => {
-        response.forEach(item => {
-            const itemEl = div();
-
-            Object.keys(item).forEach(key => {
-                itemEl.append(
-                    span({
-                            innerText: key === 'date'
-                                ? new Date(item[key] * 1000).toISOString().split('.')[0]
-                                : item[key]
-                        }
-                    )
-                );
-            });
-
-            itemsEl.append(itemEl)
-        });
-    });
-
-    outletEl.append(itemsEl)
 }

@@ -1,0 +1,13 @@
+.categories {
+    font-size: 30px;
+}
+
+.category {
+    margin-bottom: 10px;
+}
+
+.category > span {
+    border-bottom: 1px solid #bababa;
+    display: block;
+    margin-bottom: 10px;
+}

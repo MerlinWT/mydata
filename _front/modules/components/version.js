@@ -1,5 +1,5 @@
-import {span} from "./dom.js";
-import {get as getModel} from "./api.js";
+import {span} from "../dom.js";
+import {get as getModel} from "../api.js";
 
 export function get(versionEl) {
 

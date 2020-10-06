@@ -31,3 +31,9 @@ export function button(properties = {}, attributes = {}) {
 export function form(properties = {}, attributes = {}) {
     return el('form', properties, attributes)
 }
+
+export function appends(root, childes) {
+    childes.forEach(child => root.append(child))
+
+    return root
+}

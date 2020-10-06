@@ -1,0 +1,12 @@
+.table {
+    margin-top: 20px;
+}
+
+.table > div {
+    border-bottom: 1px dotted #bababa;
+}
+
+.table span {
+    margin-right: 10px;
+    padding: 10px;
+}
