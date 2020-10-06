@@ -19,7 +19,7 @@ create table mydata.groups (
   id MEDIUMINT NOT NULL AUTO_INCREMENT,
   category_id MEDIUMINT NOT NULL,
   title CHAR(100) NOT NULL,
-  route CHAR(30) NOT NULL,
+  model CHAR(30) NOT NULL,
   PRIMARY KEY (id),
   CONSTRAINT fk_category
     FOREIGN KEY (category_id) REFERENCES mydata.categories (id)
@@ -29,50 +29,50 @@ create table mydata.groups (
 
 create table mydata.spending_products (
   id MEDIUMINT NOT NULL AUTO_INCREMENT,
-  date TIMESTAMP NOT NULL,
-  shop INT,
+  date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+  shop CHAR(30),
   sum FLOAT,
   PRIMARY KEY (id)
 );
 create table mydata.spending_chemistry (
   id MEDIUMINT NOT NULL AUTO_INCREMENT,
   date TIMESTAMP NOT NULL,
-  shop INT,
+  shop CHAR(30),
   sum FLOAT,
   PRIMARY KEY (id)
 );
 create table mydata.spending_appliances (
   id MEDIUMINT NOT NULL AUTO_INCREMENT,
   date TIMESTAMP NOT NULL,
-  shop INT,
+  shop CHAR(30),
   sum FLOAT,
   PRIMARY KEY (id)
 );
 create table mydata.spending_communal (
   id MEDIUMINT NOT NULL AUTO_INCREMENT,
   date TIMESTAMP NOT NULL,
-  shop INT,
+  shop CHAR(30),
   sum FLOAT,
   PRIMARY KEY (id)
 );
 create table mydata.spending_communication (
   id MEDIUMINT NOT NULL AUTO_INCREMENT,
   date TIMESTAMP NOT NULL,
-  shop INT,
+  shop CHAR(30),
   sum FLOAT,
   PRIMARY KEY (id)
 );
 create table mydata.spending_clothes (
   id MEDIUMINT NOT NULL AUTO_INCREMENT,
   date TIMESTAMP NOT NULL,
-  shop INT,
+  shop CHAR(30),
   sum FLOAT,
   PRIMARY KEY (id)
 );
 create table mydata.spending_bicycle (
   id MEDIUMINT NOT NULL AUTO_INCREMENT,
   date TIMESTAMP NOT NULL,
-  shop INT,
+  shop CHAR(30),
   sum FLOAT,
   PRIMARY KEY (id)
 );

@@ -9,5 +9,5 @@ class Spending(Dated):
     def deserialize(self, fields):
         super().deserialize(fields)
 
-        self.shop = fields.getfirst('shop')
+        self.shop = str(fields.getfirst('shop'))
         self.sum = float(fields.getfirst('sum'))

@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 import inspect
+import time
 
 
 class Model:
+    id = None
     name = None
 
     def serialize(self):
@@ -11,7 +13,8 @@ class Model:
 
         serialised = {}
         for attribute in attributes:
-            serialised[attribute[0]] = attribute[1]
+            if attribute[0] != 'name':
+                serialised[attribute[0]] = attribute[1]
 
         return serialised
 
@@ -30,7 +33,7 @@ class Model:
         models = []
 
         data = self.serialize()
-        fields = list({*data} - {'name'})
+        fields = [*data]
 
         cursor = connection.cursor()
         cursor.execute(
@@ -41,7 +44,10 @@ class Model:
             data = {}
             i = 0
             for field in fields:
-                data[field] = values[i]
+                if field == 'date':
+                    data[field] = time.mktime(values[i].timetuple())
+                else:
+                    data[field] = values[i]
                 i += 1
             models.append(data)
 

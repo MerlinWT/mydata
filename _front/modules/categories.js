@@ -1,5 +1,6 @@
 import {div, span} from "./dom.js";
 import {groups} from "./groups.js";
+import {get as getModel} from "./api.js";
 
 function category(id, title) {
     const categoryEl = div({className: "category"});
@@ -8,12 +9,15 @@ function category(id, title) {
         span({innerText: title})
     );
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `api/get.py?model=group&pk=category_id&pkv=${id}`);
-    xhr.send();
-
-    xhr.onload = () => categoryEl.append(
-        groups(JSON.parse(xhr.response))
+    getModel(
+        'group',
+        {
+            pk: "category_id",
+            pkv: id
+        },
+        response => categoryEl.append(
+            groups(response)
+        )
     );
 
     return categoryEl

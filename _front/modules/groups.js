@@ -12,7 +12,14 @@ function group(title, state) {
 export function groups(data) {
     const categoriesEl = div({className: "groups"});
 
-    data.forEach(_group => categoriesEl.append(group(_group.title, `group/${_group.id}`)));
+    data.forEach(
+        _group => categoriesEl.append(
+            group(
+                _group.title,
+                `group/${_group.model}`
+            )
+        )
+    );
 
     return categoriesEl
 }
