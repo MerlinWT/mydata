@@ -4,6 +4,7 @@
 
 .table > div {
     border-bottom: 1px dotted #bababa;
+    margin-bottom: 10px;
 }
 
 .table span {
