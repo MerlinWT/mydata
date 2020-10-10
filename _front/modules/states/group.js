@@ -3,8 +3,8 @@ import {get as form} from "../components/form.js";
 import {table} from "../components/table.js";
 
 const spending = [
-    ['input', {}, {placeholder: 'магазин', name: 'shop'}],
-    ['input', {}, {placeholder: 'сумма', name: 'sum'}],
+    ['input', {type: 'text'}, {placeholder: 'магазин', name: 'shop'}],
+    ['input', {type: 'number'}, {placeholder: 'сумма', name: 'sum'}],
 ];
 // todo Get from server (models meta)
 const fields = {
@@ -17,14 +17,14 @@ const fields = {
     spending_bicycle: spending,
 
     sport_bicycle: [
-        ['input', {}, {placeholder: 'время', name: 'duration'}],
-        ['input', {}, {placeholder: 'дистанция', name: 'distance'}],
+        ['input', {type: 'number'}, {placeholder: 'время', name: 'duration'}],
+        ['input', {type: 'number'}, {placeholder: 'дистанция', name: 'distance'}],
     ],
     sport_exercises: [
-        ['input', {}, {placeholder: 'отжимания', name: 'push_ups'}],
-        ['input', {}, {placeholder: 'приседания', name: 'squats'}],
-        ['input', {}, {placeholder: 'пресс', name: 'abdominal'}],
-        ['input', {}, {placeholder: 'подтягивания', name: 'pull_ups'}],
+        ['input', {type: 'number'}, {placeholder: 'отжимания', name: 'push_ups'}],
+        ['input', {type: 'number'}, {placeholder: 'приседания', name: 'squats'}],
+        ['input', {type: 'number'}, {placeholder: 'пресс', name: 'abdominal'}],
+        ['input', {type: 'number'}, {placeholder: 'подтягивания', name: 'pull_ups'}],
     ],
     sport_volleyball: [],
     sport_ping_pong: []

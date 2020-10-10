@@ -1,17 +1,40 @@
 import {appends, div, span} from "../dom.js";
 import {get as getModel} from "../api.js"
 
+const order = [
+    "id",
+    "date",
+
+    "shop",
+    "sum",
+
+    "duration",
+    "distance",
+
+    "push_ups",
+    "squats",
+    "abdominal",
+    "pull_ups",
+];
+
 function row(data) {
     return appends(
         div(),
-        Object.keys(data).map(
-            key => span({
-                    innerText: key === 'date'
-                        ? new Date(data[key] * 1000).toISOString().split('.')[0]
-                        : data[key]
+        order
+            .filter(key => data[key])
+            .map(
+                key => {
+                    if (data[key]) {
+                        return span({
+                                innerText: key === 'date'
+                                    ? new Date(data[key] * 1000).toISOString().split('T')[0]
+                                    : data[key],
+                                className: key
+                            }
+                        )
+                    }
                 }
             )
-        )
     );
 }
 

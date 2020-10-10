@@ -1,5 +1,5 @@
 .groups {
-    font-size: 20px;
+    font-size: 25px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-column-gap: 10px;
@@ -11,6 +11,13 @@
     background-color: #bababa;
     padding: 10px;
     overflow: hidden;
+    width: 200px;
+    height: 100px;
+}
+
+.group:hover {
+    border-bottom: 5px solid white;
+    height: 95px;
 }
 
 .group > a {

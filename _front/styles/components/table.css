@@ -1,13 +1,44 @@
 .table {
-    margin-top: 20px;
+    margin-top: 15px;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, 25px);
+    grid-row-gap: 5px;
+    height: calc(100% - 70px);
 }
 
 .table > div {
+    display: flex;
     border-bottom: 1px dotted #bababa;
     margin-bottom: 10px;
+    height: 100%;
 }
 
 .table span {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
     margin-right: 10px;
-    padding: 10px;
+}
+
+.table .id {
+    width: 30px;
+}
+
+.table .date {
+    width: 190px;
+}
+
+.table .shop {
+    width: 190px;
+}
+
+.table .sum,
+.table .duration,
+.table .distance,
+.table .push_ups,
+.table .squats,
+.table .abdominal,
+.table .pull_ups
+{
+    width: 106px;
 }

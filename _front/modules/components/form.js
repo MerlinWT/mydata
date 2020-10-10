@@ -4,8 +4,8 @@ export function get(model, fields) {
     return appends(
         form({}, {action: '/api/create'}),
         [
-            input({}, {name: 'model', hidden: 'true', value: model}),
-            input({}, {placeholder: 'дата', name: 'date'}),
+            input({type: 'text'}, {name: 'model', hidden: 'true', value: model}),
+            input({type: 'date'}, {placeholder: 'дата', name: 'date'}),
             ...fields.map(field => el(...field)),
 
             button({innerText: 'Отправить'})
